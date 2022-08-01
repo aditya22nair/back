@@ -15,10 +15,14 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, 'Please add a password'],
     },
+    admin:{
+      type:Boolean,
+      default:false
+    }
   },
   {
     timestamps: true,
-  }
+  },{collection:"users"}
 )
 
 module.exports = mongoose.model('User', userSchema)

@@ -7,10 +7,17 @@ const goalSchema = mongoose.Schema(
       required: true,
       ref: 'User',
     },
-    text: {
+    companyName: {
       type: String,
       required: [true, 'Please add a text value'],
     },
+    slots: [
+      {
+        timing:{type:String},
+        totalSlots:{type:Number,default:10},
+        slotsAvailable:{type:Number,default:10}
+      }
+    ]
   },
   {
     timestamps: true,
